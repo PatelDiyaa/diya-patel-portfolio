@@ -1,17 +1,20 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { FileText } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import { profile } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "#work", label: "Work" },
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#work", label: "Work" },
+  { href: "/#about", label: "About" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#contact", label: "Contact" },
 ];
+
+const RESUME_URL =
+  "https://docs.google.com/document/d/1lPwNgix7OKGl7WivAmd64UoROUM2VLqoMD1HkDoOYsE/edit?usp=share_link";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -27,9 +30,7 @@ export default function Nav() {
     <header
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-all duration-500",
-        scrolled
-          ? "py-3"
-          : "py-5"
+        scrolled ? "py-3" : "py-5"
       )}
     >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
@@ -41,16 +42,12 @@ export default function Nav() {
               : "border border-transparent"
           )}
         >
-          <a href="#top" className="flex items-center gap-2.5 group">
+          <a href="/" className="flex items-center gap-2.5 group">
             <span className="relative h-7 w-7 grid place-items-center rounded-full bg-ink-900 dark:bg-white text-white dark:text-ink-900 serif text-sm">
               D
             </span>
             <span className="text-sm font-medium tracking-tight">
               {profile.name}
-            </span>
-            <span className="hidden sm:inline-flex items-center gap-1.5 ml-2 text-xs text-ink-500 dark:text-ink-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 pulse-soft" />
-              Available
             </span>
           </a>
 
@@ -68,10 +65,13 @@ export default function Nav() {
 
           <div className="flex items-center gap-2">
             <a
-              href="#contact"
-              className="hidden sm:inline-flex items-center gap-2 rounded-full bg-ink-900 dark:bg-white text-white dark:text-ink-900 px-3.5 py-1.5 text-sm font-medium transition-transform hover:scale-[1.02]"
+              href={RESUME_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-ink-900 dark:bg-white text-white dark:text-ink-900 px-3.5 py-1.5 text-sm font-medium transition-transform hover:scale-[1.02]"
             >
-              Let&apos;s talk
+              <FileText className="h-3.5 w-3.5" />
+              Resume
             </a>
             <ThemeToggle />
           </div>

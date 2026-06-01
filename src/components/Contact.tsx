@@ -20,7 +20,7 @@ export default function Contact() {
         >
           <span className="mono inline-flex items-center gap-2 text-ink-500 dark:text-ink-300">
             <span className="h-px w-6 bg-current opacity-60" />
-            05 · Contact
+            04 · Contact
           </span>
 
           <h2 className="serif text-5xl sm:text-7xl md:text-[6rem] tracking-tightest leading-[0.95]">

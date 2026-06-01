@@ -36,7 +36,7 @@ export const profile = {
   bio: [
     "I'm a product designer with a Computer Science background and a Minor in Design from Ahmedabad University. My work sits at the intersection of clarity, craft, and operational reality — designing tools that real teams use every day to run their businesses.",
     "At Petpooja I lead end-to-end design for the Tasks product and ship feature work across the POS suite. That means building a multi-platform design system from scratch, owning flows from research to engineering handoff, and partnering closely with PMs, engineers, and QA.",
-    "I'm also fluent in modern AI-assisted workflows. Claude, Codex, and Cursor are part of my daily process — for synthesizing research, exploring directions faster, and shortening the loop between idea and prototype. I treat AI as a thinking partner, not a shortcut.",
+    "I'm also fluent in modern AI-assisted workflows. I use AI to widen the search space: to synthesize research, explore directions faster, prototype interactions, and get working artifacts in front of people sooner. But I treat AI as a thinking partner, not the designer. The judgment, taste, and final decisions stay human.",
   ],
   values: [
     {

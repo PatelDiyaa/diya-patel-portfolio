@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* ============================================================
+   Case Study editorial styles — scoped under .cs-page
+   Lifted from the design handoff. Two accent palettes (set
+   per-page via inline CSS variables). Light + dark variants.
+   ============================================================ */
+
+.cs-page {
+  --bg: #FAFAF7;
+  --bg-2: #F1EFE9;
+  --ink: #171715;
+  --ink-2: #3A3A36;
+  --muted: #7A7A72;
+  --line: #E5E2D8;
+  --card: #FFFFFF;
+  --accent-deep: #C9462C;
+  --accent-cream: #FBEFE0;
+  --accent-warm: #E8D5C0;
+  --serif: "Instrument Serif", Georgia, serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.dark .cs-page {
+  --bg: #0E0D0B;
+  --bg-2: #18171430;
+  --ink: #FAFAF7;
+  --ink-2: #C8C5BE;
+  --muted: #8B8983;
+  --line: #2B2A27;
+  --card: #16151205;
+}
+
+.cs-page * { box-sizing: border-box; }
+.cs-page img, .cs-page video { max-width: 100%; display: block; }
+.cs-page a { color: inherit; }
+
+.cs-wrap { max-width: 1120px; margin: 0 auto; padding: 80px 32px 0; }
+
+/* Breadcrumb */
+.cs-page .crumb { padding: 36px 0 8px; color: var(--muted); font-size: 13px; }
+.cs-page .crumb a { text-decoration: none; color: var(--muted); }
+.cs-page .crumb a:hover { color: var(--ink); }
+
+/* Hero */
+.cs-page .hero { padding: 24px 0 56px; }
+.cs-page .eyebrow {
+  font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 20px;
+}
+.cs-page h1.title {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(56px, 8vw, 108px); line-height: 1.0;
+  letter-spacing: -.02em; margin-bottom: 18px; color: var(--ink);
+}
+.cs-page h1.title em { font-style: italic; color: var(--ink-2); }
+.cs-page .lede {
+  font-size: 20px; line-height: 1.55; color: var(--ink-2);
+  max-width: 760px; margin-top: 6px;
+}
+.cs-page .lede em { font-family: var(--serif); font-style: italic; font-size: 1.05em; }
+
+/* Hero media — floating screenshots */
+.cs-page .hero-media {
+  margin-top: 48px; padding: 32px 0 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.cs-page .hero-row {
+  display: flex; gap: 36px; align-items: flex-end;
+  justify-content: center; flex-wrap: nowrap; width: 100%;
+}
+.cs-page .hero-phone-wrap {
+  flex: 1 1 0; min-width: 0;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+.cs-page .hero-phone-wrap img {
+  max-height: 520px; width: auto; height: auto;
+  border-radius: 14px; background: #fff;
+  box-shadow: 0 28px 64px -16px rgba(23,23,21,.18),
+              0 8px 20px -6px rgba(23,23,21,.08);
+}
+.cs-page .hero-phone-wrap.featured img { max-height: 540px; }
+.cs-page .hero-phone-wrap .lbl {
+  font-size: 11px; letter-spacing: .24em; text-transform: uppercase;
+  color: var(--muted); font-weight: 600; order: -1;
+}
+
+/* Meta grid */
+.cs-page .meta {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+  margin-top: 56px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.cs-page .meta > div { padding: 24px 28px; border-right: 1px solid var(--line); }
+.cs-page .meta > div:last-child { border-right: 0; }
+.cs-page .meta-label {
+  font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 8px;
+}
+.cs-page .meta-value { font-size: 15px; color: var(--ink); font-weight: 500; line-height: 1.4; }
+
+/* Sections */
+.cs-page .cs-section { padding: 88px 0; }
+.cs-page .cs-section.tight { padding-top: 0; }
+.cs-page .section-label {
+  display: flex; align-items: center; gap: 14px;
+  color: var(--muted); font-size: 13px; margin-bottom: 24px;
+}
+.cs-page .section-label .num {
+  font-family: var(--serif); font-style: italic; color: var(--ink); font-size: 18px;
+}
+.cs-page h2 {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(34px, 4.5vw, 56px); line-height: 1.08;
+  letter-spacing: -.015em; margin-bottom: 24px; max-width: 840px; color: var(--ink);
+}
+.cs-page h2 em { font-style: italic; color: var(--ink-2); }
+.cs-page p.body {
+  font-size: 17px; line-height: 1.7; color: var(--ink-2); max-width: 720px;
+}
+.cs-page p.body + p.body { margin-top: 18px; }
+.cs-page p.body em {
+  font-family: var(--serif); font-style: italic; color: var(--ink); font-size: 1.03em;
+}
+
+/* Process */
+.cs-page .didgrid {
+  display: grid; grid-template-columns: 1fr 1.4fr;
+  gap: 64px; align-items: start;
+}
+.cs-page .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.cs-page .pill {
+  padding: 7px 13px; border: 1px solid var(--line);
+  border-radius: 999px; background: var(--card);
+  font-size: 13px; color: var(--ink-2);
+}
+
+/* Pull quote */
+.cs-page .pull {
+  margin: 40px 0 0; border-left: 2px solid var(--accent-deep);
+  padding: 8px 0 8px 28px;
+}
+.cs-page .pull + .pull { margin-top: 24px; }
+.cs-page .pull p {
+  font-family: var(--serif); font-style: italic;
+  font-size: 26px; line-height: 1.35; color: var(--ink); max-width: 760px;
+}
+.cs-page .pull cite {
+  display: block; margin-top: 12px; font-style: normal;
+  font-family: var(--sans); font-size: 12px; color: var(--muted);
+  letter-spacing: .1em; text-transform: uppercase;
+}
+
+/* Problems */
+.cs-page .problems {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 36px;
+}
+.cs-page .prob {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 16px; padding: 28px;
+}
+.cs-page .prob .tag {
+  font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 14px;
+}
+.cs-page .prob h3 {
+  font-family: var(--serif); font-weight: 400;
+  font-size: 24px; line-height: 1.2; margin-bottom: 10px; color: var(--ink);
+}
+.cs-page .prob h3 em { font-style: italic; color: var(--accent-deep); }
+.cs-page .prob p { font-size: 15px; color: var(--ink-2); line-height: 1.6; }
+
+/* Solution / design moves */
+.cs-page .solution { margin-top: 40px; }
+.cs-page .sol-head { max-width: 780px; }
+.cs-page .sol-head h3 {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(28px, 3.5vw, 40px); line-height: 1.15;
+  letter-spacing: -.01em; margin-bottom: 18px; color: var(--ink);
+}
+.cs-page .sol-head h3 em { font-style: italic; color: var(--accent-deep); }
+.cs-page .solves {
+  display: inline-block; margin-top: 22px; padding: 6px 12px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--bg-2);
+  font-size: 12px; color: var(--ink-2); letter-spacing: .04em;
+}
+.cs-page .sol-media {
+  margin-top: 36px; display: flex; align-items: center; justify-content: center;
+}
+.cs-page .sol-media img {
+  max-height: 560px; width: auto; height: auto;
+  border-radius: 14px; background: #fff;
+  box-shadow: 0 24px 56px -16px rgba(23,23,21,.14),
+              0 8px 20px -8px rgba(23,23,21,.06);
+}
+.cs-page .sol-single {
+  margin-top: 36px; display: flex; align-items: center; justify-content: center;
+}
+.cs-page .sol-single img {
+  max-height: 600px; width: auto; height: auto;
+  border-radius: 14px; background: #fff;
+  box-shadow: 0 28px 64px -18px rgba(23,23,21,.16),
+              0 10px 22px -8px rgba(23,23,21,.06);
+}
+.cs-page .sol-caption {
+  margin-top: 12px; font-size: 11px; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--muted);
+}
+
+/* Two-col image pair */
+.cs-page .twocol {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 36px;
+}
+.cs-page .twocol .sol-media { margin-top: 0; }
+
+/* Petpooja: the Five fields */
+.cs-page .five {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 36px;
+}
+.cs-page .field {
+  background: var(--accent-cream); border: 1px solid var(--line);
+  border-radius: 14px; padding: 22px 18px; min-height: 160px;
+  display: flex; flex-direction: column; gap: 8px; color: var(--accent-deep);
+}
+.cs-page .field .fnum {
+  font-family: var(--serif); font-style: italic; font-size: 18px; opacity: .7;
+}
+.cs-page .field .fname {
+  font-weight: 600; font-size: 15px; line-height: 1.3; color: var(--ink);
+}
+.cs-page .field .fdesc { font-size: 12px; line-height: 1.5; color: var(--ink-2); }
+
+/* Nutrify: 5-feat cards */
+.cs-page .features {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 32px;
+}
+.cs-page .feat {
+  background: var(--accent-cream); border-radius: 14px;
+  padding: 22px 18px; color: var(--accent-deep); min-height: 200px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.cs-page .feat .fname { font-weight: 700; font-size: 15px; line-height: 1.25; }
+.cs-page .feat .fdesc { font-size: 13px; line-height: 1.5; opacity: .85; }
+
+/* Petpooja: Before / After */
+.cs-page .compare {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 40px;
+}
+.cs-page .compare .col { display: flex; flex-direction: column; }
+.cs-page .compare .col-head {
+  display: flex; align-items: center; gap: 10px; padding: 0 0 16px 0;
+}
+.cs-page .compare .col-head .dot { width: 8px; height: 8px; border-radius: 50%; }
+.cs-page .compare .col.before .dot { background: #C9462C; }
+.cs-page .compare .col.after .dot { background: #3F8F4D; }
+.cs-page .compare .col-head .label {
+  font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--muted); font-weight: 600;
+}
+.cs-page .compare .col-body {
+  display: flex; align-items: center; justify-content: center;
+}
+.cs-page .compare .col-body img {
+  max-height: 560px; width: auto; height: auto;
+  border-radius: 14px; background: #fff;
+  box-shadow: 0 24px 56px -16px rgba(23,23,21,.14),
+              0 8px 20px -8px rgba(23,23,21,.06);
+}
+
+/* Outcomes / impact */
+.cs-page .impact-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 24px;
+}
+.cs-page .metric {
+  background: var(--ink); color: var(--bg); border-radius: 18px;
+  padding: 32px 28px; min-height: 180px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.dark .cs-page .metric { background: #FAFAF7; color: #0E0D0B; }
+.cs-page .metric .num {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(40px, 5vw, 64px); line-height: 1; letter-spacing: -.02em;
+}
+.cs-page .metric .lbl {
+  font-size: 14px; line-height: 1.45; max-width: 240px;
+  color: rgba(255,255,255,.78);
+}
+.dark .cs-page .metric .lbl { color: rgba(14,13,11,.7); }
+
+/* Reflection callout */
+.cs-page .reflect {
+  background: var(--bg-2); border: 1px solid var(--line);
+  border-radius: 20px; padding: 48px; margin-top: 32px;
+}
+.dark .cs-page .reflect { background: rgba(255,255,255,.03); }
+.cs-page .reflect p {
+  font-family: var(--serif); font-style: italic;
+  font-size: 24px; line-height: 1.4; color: var(--ink); max-width: 760px;
+}
+
+/* Prev / next */
+.cs-page .next {
+  padding: 80px 0; border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 24px; flex-wrap: wrap;
+}
+.cs-page .next a { text-decoration: none; }
+.cs-page .next .label {
+  color: var(--muted); font-size: 12px; letter-spacing: .16em;
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.cs-page .next .title-sm {
+  font-family: var(--serif); font-size: 32px; line-height: 1.05; color: var(--ink);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cs-page .didgrid { grid-template-columns: 1fr; gap: 24px; }
+  .cs-page .meta { grid-template-columns: repeat(2, 1fr); }
+  .cs-page .meta > div { border-bottom: 1px solid var(--line); }
+  .cs-page .meta > div:nth-child(2) { border-right: 0; }
+  .cs-page .problems { grid-template-columns: 1fr; }
+  .cs-page .twocol { grid-template-columns: 1fr; }
+  .cs-page .compare { grid-template-columns: 1fr; gap: 24px; }
+  .cs-page .impact-grid { grid-template-columns: 1fr; }
+  .cs-page .five { grid-template-columns: repeat(2, 1fr); }
+  .cs-page .features { grid-template-columns: 1fr 1fr; }
+  .cs-page .cs-section { padding: 64px 0; }
+  .cs-page .reflect { padding: 32px; }
+}
+@media (max-width: 640px) {
+  .cs-page .hero-row { flex-wrap: wrap; gap: 18px; }
+  .cs-page .hero-phone-wrap img,
+  .cs-page .hero-phone-wrap.featured img { max-height: 420px; }
+  .cs-page .sol-media img,
+  .cs-page .sol-single img,
+  .cs-page .compare .col-body img { max-height: 480px; }
+}
